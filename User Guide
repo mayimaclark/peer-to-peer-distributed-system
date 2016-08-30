@@ -1,0 +1,37 @@
+This implementation is based on the Peer-to-Peer architecture.
+
+There are two peers, ClientPeer_SR1 and ClientServer_SR2. Each connects to their own ServerRouter. Once connected, the two ServerRouters connect to each other. After connections have been made, the thread that has been started waits for 10 seconds to allow for the Routing Tables to be properly populated.
+
+Next, the ServerRouter for the ClientServer making the request – ClientServer_SR1 in this case – will send a message verifying it is in the Routing Table of its ServerRouter. After that, the ServerRouter for ClientServer1 will send a confirmation, which then allows the ClientServer_SR1 to make a direct connection to ClientServer_SR2.
+
+From there, ClientServer_SR1 will begin message transmission as long as the connection has been made successfully. Line by line, ClientServer_SR1 will send messages to ClientServer_SR2. ClientServer_SR2 will then receive the message, capitalize it, and send it back. Meanwhile, ClientServer_SR1 is calculating data.
+
+To run the simulation, each of the programs must be downloaded on a different computer.
+
+Computer 1 will have ClientServer_SR1.
+Computer 2 will have ClientServer_SR2 and file.txt.
+Computer 3 will have TCPServerRouter1. It will also require SThread1.
+Computer 4 will have TCPServerRouter2 and SThread2.
+
+This simulation allows for 100 different nodes. jGRASP allows for a simple setup and execution. It would be an appropriate IDE to use for compiling/executing the files.
+
+For the machine chosen to be ClientServer_SR2: on line 20, the IP address listed should be changed to the IP address of the computer chosen to be ServerRouter2. Next, on line 55, the IP address there should be changed to the IP address of the computer chosen to be ClientPeer_SR1. ClientPeer_SR2 is now ready to be compiled.
+
+ServerRouter2 and SThread2 do not require any changes. Please be sure to compile each program before execution.
+
+Next, to configure SThread1, go to line 59. The IP address then should be changed to be the IP address of the computer chosen to be ServerRouter2.
+
+Finally, set up ClientServer_SR1 by changing the router address on line 20 to the IP address for ServerRouter1. Also, on line 41, change the IP address to the ClientServer_SR2 address. Do the same for line 70.
+
+Be sure to connect all devices to the same network. Also, make sure to use the IPv4 address for your devices, which can be located in the computer’s network settings. After all the programs have been configured correctly, they can move on to compilation and the execution phase.
+
+Before execution, please compile all files. Compiling first ensures there are no errors in the program. Additionally, it transforms the source code into Java bytecode where it is then translated into machine language. Compiling must be done first, in order for the files to be executed successfully.
+
+
+First, the ServerRouter1 and ServerRouter2 need to be executed. It does not matter which of the two is executed first, as long as it is done before the Client and Server.
+
+ServerRouter1 will be listening on socket 5555 and ServerRouter2 will be listening on 5556. They will be waiting on connections.
+
+Next, the Client and the Server can be executed. Again, it does not matter which is executed first between the two as long as they are executed closely in time. The Client will be trying to connect on socket 5555 and the Server will be trying to connect on socket 5556.
+
+The ServerRouter1 will then connect to the Client while ServerRouter2 tries to connect to the Server. Then, the two routers will connect to each other on socket 5556. ServerRouter2 will wait 10 seconds to fill its routing table before communication begins. Depending on the length of the text file(s), each of them may take varying amounts of time to complete.

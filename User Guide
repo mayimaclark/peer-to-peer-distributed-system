@@ -6,7 +6,7 @@ Next, the ServerRouter for the ClientServer making the request – ClientServer_
 
 From there, ClientServer_SR1 will begin message transmission as long as the connection has been made successfully. Line by line, ClientServer_SR1 will send messages to ClientServer_SR2. ClientServer_SR2 will then receive the message, capitalize it, and send it back. Meanwhile, ClientServer_SR1 is calculating data.
 
-To run the simulation, each of the programs must be downloaded on a different computer.
+To run the simulation, each of the programs must be downloaded on a different computer. 
 
 Computer 1 will have ClientServer_SR1.
 Computer 2 will have ClientServer_SR2 and file.txt.

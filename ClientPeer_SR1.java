@@ -13,7 +13,7 @@ public class ClientPeer_SR1 {
       ArrayList <Long> elements = new ArrayList<>();
       ArrayList <Integer> elements2 = new ArrayList<>();
          
-   		// Variables for setting up connection and communication
+   	// Variables for setting up connections and communication
       Socket Socket = null; // socket to connect with ServerRouter
       PrintWriter out = null; // for writing to ServerRouter
       BufferedReader in = null; // for reading form ServerRouter
